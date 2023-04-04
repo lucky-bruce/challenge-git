@@ -30,3 +30,17 @@ How to attempt this challenge:
 
 You must follow these steps for your solution to be accepted -- forks or other methods will not be considered.
 
+git clone https://github.com/outlier-org/challenge-git
+cd challenge-git/
+git rebase origin/feature/base64
+git checkout -b feature/useragent origin/feature/useragent
+git rebase master
+git add --ignore-errors -A -f --sparse -- server.js
+git add --ignore-errors -A -f --sparse -- test.js
+git config user.name "lucky-bruce"
+git config user.email "jalicorich@gmail.com"
+git rebase --continue
+git checkout master
+git merge feature/useragent
+git remote set-url origin https://github.com/lucky-bruce/challenge-git.git
+git push --progress --porcelain origin refs/heads/master:master
